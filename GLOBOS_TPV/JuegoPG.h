@@ -44,7 +44,7 @@ private:
 
 	const int SCREEN_WIDTH = 640;   //Ancho de ventana
 	const int SCREEN_HEIGHT = 480;  //Alto de ventana
-	const int globosTotales = 10;	//Numero de globos que se dibujan (NG)
+	const int globosTotales = 5;	//Numero de globos que se dibujan (NG)
 	
 	void initMedia(); // carga las texturas en el vector de texturas (fuente y música)
 	void freeMedia();

@@ -121,22 +121,6 @@ void JuegoPG::closeSDL () {
 
 bool JuegoPG::initObjetos(){
 
-	/*
-	----------------------------------------------------------
-	Implementación para mostrar globos de diferentes texturas
-						(SIN TERMINAR)
-	----------------------------------------------------------
-
-	string nombArch[3];
-	nombArch[0] = { "..\\bmps\\globo.png" };
-	nombArch[1] = { "..\\bmps\\globo2.png" };
-	nombArch[2] = { "..\\bmps\\globo3.png" };
-
-	for (int j = 0; j < 3; ++j) {
-		pTexture->load(pRender, nombArch[j]);
-		vTexturas.push_back(pTexture);
-	}
-	*/
 	srand(time(NULL));
 
 	int x, y;
@@ -165,20 +149,20 @@ bool JuegoPG::initObjetos(){
 	//Creamos la mariposa y la metemos en la primera posición del array
 	x = rand() % 610;
 	y = rand() % 420;
-	ObjetoJuego* mariposa = new ObjetoJuego(this, x, y, TMariposa);
+	ObjetoJuego* mariposa = new Mariposa(this, x, y, TMariposa);
 	vObjetos.push_back(mariposa);
 
 	for (i = 1; i < globosTotales; ++i){	
 		x = rand() % 610;
 		y = rand() % 420;
-		ObjetoJuego* unGlobo = new ObjetoJuego(this, x, y, TGlobos);
+		ObjetoJuego* unGlobo = new GlobosPG(this, x, y, TGlobos);
 		vObjetos.push_back(unGlobo);
 	}
 	
 	//Creamos el premio y lo metemos en la última posición del array
 	x = rand() % 610;
 	y = rand() % 420;
-	ObjetoJuego* premio = new ObjetoJuego(this, x, y, TPremio);
+	ObjetoJuego* premio = new Premio(this, x, y, TPremio);
 	vObjetos.push_back(premio);
 
 

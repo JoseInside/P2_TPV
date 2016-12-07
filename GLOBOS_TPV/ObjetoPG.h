@@ -1,7 +1,9 @@
-#pragma once
+#ifndef  _H_ObjetoPG_H_
+
 #include "SDL.h"
 #include "JuegoPG.h"
 #include "ObjetoJuego.h"
+
 
 class ObjetoPG : public ObjetoJuego
 {
@@ -25,3 +27,4 @@ public:
 
 };
 
+#endif

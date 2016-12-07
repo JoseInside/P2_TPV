@@ -12,13 +12,7 @@ GlobosPG::~GlobosPG()
 {
 }
 
-/*
-void GlobosPG::draw() const{
-	if (visible){
-		pTextura->draw(obJuego->getRender(), rect);
-	}
-}
-*/
+
 bool GlobosPG::onClick(){
 
 	if (visible && dentro(rect.x, rect.y)){
