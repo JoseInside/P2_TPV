@@ -30,6 +30,12 @@
     <ClCompile Include="ObjetoPG.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="Premio.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Mariposa.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="GlobosPG.h">
@@ -48,6 +54,12 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="ObjetoPG.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Premio.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Mariposa.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

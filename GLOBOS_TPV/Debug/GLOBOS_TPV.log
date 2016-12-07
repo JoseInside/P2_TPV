@@ -1,1 +1,80 @@
-﻿
+﻿Compilación iniciada a las 07/12/2016 18:42:14.
+     1>Proyecto "C:\hlocal\P2_TPV\GLOBOS_TPV\GLOBOS_TPV.vcxproj" en el nodo 2 (Rebuild destinos).
+     1>ClCompile:
+         C:\software\programacion\MSVStudio2013\VC\bin\CL.exe /c /ZI /nologo /W3 /WX- /sdl /Od /Oy- /D _MBCS /Gm /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Fo"Debug\\" /Fd"Debug\vc120.pdb" /Gd /TP /analyze- /errorReport:prompt GlobosPG.cpp JuegoPG.cpp mainP1.cpp Mariposa.cpp ObjetoPG.cpp Premio.cpp TexturasSDL.cpp
+         TexturasSDL.cpp
+     1>c:\hlocal\p2_tpv\globos_tpv\objetopg.h(10): error C2061: error de sintaxis : identificador 'JuegoPG'
+     1>c:\hlocal\p2_tpv\globos_tpv\objetopg.h(13): error C2143: error de sintaxis : falta ';' delante de '*'
+     1>c:\hlocal\p2_tpv\globos_tpv\objetopg.h(13): error C4430: falta el especificador de tipo; se presupone int. Nota: C++ no admite default-int
+     1>c:\hlocal\p2_tpv\globos_tpv\objetopg.h(14): error C2146: error de sintaxis : falta ';' delante del identificador 'tipoTextura'
+     1>c:\hlocal\p2_tpv\globos_tpv\objetopg.h(14): error C4430: falta el especificador de tipo; se presupone int. Nota: C++ no admite default-int
+     1>c:\hlocal\p2_tpv\globos_tpv\globospg.h(9): error C2061: error de sintaxis : identificador 'JuegoPG'
+         Premio.cpp
+     1>c:\hlocal\p2_tpv\globos_tpv\globospg.h(6): error C2504: 'ObjetoPG' : clase base sin definir
+     1>c:\hlocal\p2_tpv\globos_tpv\globospg.h(9): error C2061: error de sintaxis : identificador 'JuegoPG'
+         ObjetoPG.cpp
+     1>c:\hlocal\p2_tpv\globos_tpv\globospg.h(6): error C2504: 'ObjetoPG' : clase base sin definir
+     1>c:\hlocal\p2_tpv\globos_tpv\globospg.h(9): error C2061: error de sintaxis : identificador 'JuegoPG'
+         Mariposa.cpp
+     1>c:\hlocal\p2_tpv\globos_tpv\globospg.h(6): error C2504: 'ObjetoPG' : clase base sin definir
+     1>c:\hlocal\p2_tpv\globos_tpv\globospg.h(9): error C2061: error de sintaxis : identificador 'JuegoPG'
+         mainP1.cpp
+     1>c:\hlocal\p2_tpv\globos_tpv\objetopg.h(10): error C2061: error de sintaxis : identificador 'JuegoPG'
+     1>c:\hlocal\p2_tpv\globos_tpv\objetopg.h(13): error C2143: error de sintaxis : falta ';' delante de '*'
+     1>c:\hlocal\p2_tpv\globos_tpv\objetopg.h(13): error C4430: falta el especificador de tipo; se presupone int. Nota: C++ no admite default-int
+     1>c:\hlocal\p2_tpv\globos_tpv\objetopg.h(14): error C2146: error de sintaxis : falta ';' delante del identificador 'tipoTextura'
+     1>c:\hlocal\p2_tpv\globos_tpv\objetopg.h(14): error C4430: falta el especificador de tipo; se presupone int. Nota: C++ no admite default-int
+     1>c:\hlocal\p2_tpv\globos_tpv\globospg.h(9): error C2061: error de sintaxis : identificador 'JuegoPG'
+     1>c:\hlocal\p2_tpv\globos_tpv\mainp1.cpp(29): error C2259: JuegoPG' : no se puede crear una instancia de una clase abstract
+                 debido a los siguientes miembros:
+                 'void ObjetoJuego::draw(void)' : es abstracto
+                 c:\hlocal\p2_tpv\globos_tpv\objetojuego.h(8) : vea la declaración de 'ObjetoJuego::draw'
+                 'bool ObjetoJuego::onClick(void)' : es abstracto
+                 c:\hlocal\p2_tpv\globos_tpv\objetojuego.h(12) : vea la declaración de 'ObjetoJuego::onClick'
+         JuegoPG.cpp
+     1>c:\hlocal\p2_tpv\globos_tpv\objetopg.h(10): error C2061: error de sintaxis : identificador 'JuegoPG'
+     1>c:\hlocal\p2_tpv\globos_tpv\objetopg.h(13): error C2143: error de sintaxis : falta ';' delante de '*'
+     1>c:\hlocal\p2_tpv\globos_tpv\objetopg.h(13): error C4430: falta el especificador de tipo; se presupone int. Nota: C++ no admite default-int
+     1>c:\hlocal\p2_tpv\globos_tpv\objetopg.h(14): error C2146: error de sintaxis : falta ';' delante del identificador 'tipoTextura'
+     1>c:\hlocal\p2_tpv\globos_tpv\objetopg.h(14): error C4430: falta el especificador de tipo; se presupone int. Nota: C++ no admite default-int
+     1>c:\hlocal\p2_tpv\globos_tpv\globospg.h(9): error C2061: error de sintaxis : identificador 'JuegoPG'
+     1>c:\hlocal\p2_tpv\globos_tpv\juegopg.cpp(140): warning C4244: 'argumento' : conversión de 'time_t' a 'unsigned int'; posible pérdida de datos
+     1>c:\hlocal\p2_tpv\globos_tpv\juegopg.cpp(157): warning C4018: '<' : no coinciden signed/unsigned
+     1>c:\hlocal\p2_tpv\globos_tpv\juegopg.cpp(168): error C2259: ObjetoJuego' : no se puede crear una instancia de una clase abstract
+                 debido a los siguientes miembros:
+                 'void ObjetoJuego::draw(void)' : es abstracto
+                 c:\hlocal\p2_tpv\globos_tpv\objetojuego.h(8) : vea la declaración de 'ObjetoJuego::draw'
+                 'void ObjetoJuego::update(void)' : es abstracto
+                 c:\hlocal\p2_tpv\globos_tpv\objetojuego.h(10) : vea la declaración de 'ObjetoJuego::update'
+                 'bool ObjetoJuego::onClick(void)' : es abstracto
+                 c:\hlocal\p2_tpv\globos_tpv\objetojuego.h(12) : vea la declaración de 'ObjetoJuego::onClick'
+     1>c:\hlocal\p2_tpv\globos_tpv\juegopg.cpp(168): error C2661: 'ObjetoJuego::ObjetoJuego' : ninguna función sobrecargada acepta 4 argumentos
+     1>c:\hlocal\p2_tpv\globos_tpv\juegopg.cpp(175): error C2259: ObjetoJuego' : no se puede crear una instancia de una clase abstract
+                 debido a los siguientes miembros:
+                 'void ObjetoJuego::draw(void)' : es abstracto
+                 c:\hlocal\p2_tpv\globos_tpv\objetojuego.h(8) : vea la declaración de 'ObjetoJuego::draw'
+                 'void ObjetoJuego::update(void)' : es abstracto
+                 c:\hlocal\p2_tpv\globos_tpv\objetojuego.h(10) : vea la declaración de 'ObjetoJuego::update'
+                 'bool ObjetoJuego::onClick(void)' : es abstracto
+                 c:\hlocal\p2_tpv\globos_tpv\objetojuego.h(12) : vea la declaración de 'ObjetoJuego::onClick'
+     1>c:\hlocal\p2_tpv\globos_tpv\juegopg.cpp(175): error C2661: 'ObjetoJuego::ObjetoJuego' : ninguna función sobrecargada acepta 4 argumentos
+     1>c:\hlocal\p2_tpv\globos_tpv\juegopg.cpp(182): error C2259: ObjetoJuego' : no se puede crear una instancia de una clase abstract
+                 debido a los siguientes miembros:
+                 'void ObjetoJuego::draw(void)' : es abstracto
+                 c:\hlocal\p2_tpv\globos_tpv\objetojuego.h(8) : vea la declaración de 'ObjetoJuego::draw'
+                 'void ObjetoJuego::update(void)' : es abstracto
+                 c:\hlocal\p2_tpv\globos_tpv\objetojuego.h(10) : vea la declaración de 'ObjetoJuego::update'
+                 'bool ObjetoJuego::onClick(void)' : es abstracto
+                 c:\hlocal\p2_tpv\globos_tpv\objetojuego.h(12) : vea la declaración de 'ObjetoJuego::onClick'
+     1>c:\hlocal\p2_tpv\globos_tpv\juegopg.cpp(182): error C2661: 'ObjetoJuego::ObjetoJuego' : ninguna función sobrecargada acepta 4 argumentos
+     1>c:\hlocal\p2_tpv\globos_tpv\juegopg.cpp(194): warning C4018: '<' : no coinciden signed/unsigned
+     1>c:\hlocal\p2_tpv\globos_tpv\juegopg.cpp(197): warning C4018: '<' : no coinciden signed/unsigned
+     1>c:\hlocal\p2_tpv\globos_tpv\juegopg.cpp(209): warning C4018: '<' : no coinciden signed/unsigned
+     1>c:\hlocal\p2_tpv\globos_tpv\juegopg.cpp(245): warning C4018: '<' : no coinciden signed/unsigned
+         GlobosPG.cpp
+         Generando código...
+     1>Compilación del proyecto terminada "C:\hlocal\P2_TPV\GLOBOS_TPV\GLOBOS_TPV.vcxproj" (Rebuild destinos) -- ERROR.
+
+ERROR al compilar.
+
+Tiempo transcurrido 00:00:02.10

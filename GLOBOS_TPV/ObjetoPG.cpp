@@ -1,20 +1,25 @@
 #include "ObjetoPG.h"
 
 
-bool ObjetoPG::dentro(int x, int y)const {
-	int posX, posY;
-	juego->getMousePos(posX, posY);
-	juego->getTextura(text);
+//Constructora
+ObjetoPG::ObjetoPG(JuegoPG * juego, int x, int y, Texturas_t t_textura){
 	
-	if ((x <= posX) && posX <= (x + text.w) && (y <= posY) && posY <= (y + text.h))
-		return true;
-	else return false;
+	obJuego = juego;
+	tipoTextura = t_textura;
+	rect.x = posX = x;
+	rect.y = posY = y;
+}
+
+// x/y = Click del ratón (coordenadas)   --   se comprueba si el click está dentro de los límites del rect
+// de textura
+bool ObjetoPG::dentro(int x, int y)const {
+	
+	return ((rect.x <= x) && x <= (rect.x + rect.w) && (rect.y <= y) && y <= (rect.y + rect.h));
+	
 }
 
 void ObjetoPG::draw() {
-	juego->getTextura(pTextura);
-}
-
-void ObjetoPG::update(){
-
+	if (visible){
+		obJuego->getTextura(tipoTextura)->draw(obJuego->getRender(), rect);
+	}
 }

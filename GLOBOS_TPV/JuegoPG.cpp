@@ -4,6 +4,8 @@
 #include <vector>
 #include "GlobosPG.h"
 #include <time.h>
+#include "Mariposa.h"
+#include "Premio.h"
 
 using namespace std;
 
@@ -22,7 +24,7 @@ JuegoPG::JuegoPG()
 	aux.w = SCREEN_WIDTH;
 
 	initSDL();
-	initGlobos();
+	initObjetos();
 
 	if (pWin == nullptr || pRender == nullptr || pTexture == nullptr) { 
 		cout << " Fatal Error\n Press Enter";  cin.ignore();
@@ -33,7 +35,7 @@ JuegoPG::JuegoPG()
 
 JuegoPG::~JuegoPG()
 {
-	freeGlobos();
+	freeObjetos();
 	closeSDL();
 }
 
@@ -117,7 +119,7 @@ void JuegoPG::closeSDL () {
 	SDL_Quit();
 }
 
-bool JuegoPG::initGlobos(){
+bool JuegoPG::initObjetos(){
 
 	/*
 	----------------------------------------------------------
@@ -135,73 +137,76 @@ bool JuegoPG::initGlobos(){
 		vTexturas.push_back(pTexture);
 	}
 	*/
+	srand(time(NULL));
 
 	int x, y;
 	int i;
-	srand(time(NULL));
 	
-	for (i = 0; i < globosTotales; ++i){
-		
+	archText[0] = { "..\\bmps\\fondo.png" };
+	archText[1] = { "..\\bmps\\globo.png" };
+	archText[2] = { "..\\bmps\\mariposa.png" };
+	archText[3] = { "..\\bmps\\premio.png" };
+	
+	/*
+	//Para el fondo
+	fondo = new TexturasSDL;
+	fondo->load(pRender, archText[0]);
+	*/
+
+	//Cargamos las texturas (fondo, globos, mariposas y premio)
+	for (int j = 0; j < archText.size(); ++j){
+
+		pTexture = new TexturasSDL;
+		pTexture->load(pRender, archText[j]);
+		vTexturas.push_back(pTexture);
+	}
+	
+
+	//Creamos la mariposa y la metemos en la primera posición del array
+	x = rand() % 610;
+	y = rand() % 420;
+	ObjetoJuego* mariposa = new ObjetoJuego(this, x, y, TMariposa);
+	vObjetos.push_back(mariposa);
+
+	for (i = 1; i < globosTotales; ++i){	
 		x = rand() % 610;
 		y = rand() % 420;
-		//int globoElegido = rand() % 3;	//Elegimos una textura de globo distinta al azar y se la ponemos a un globo determinado.
-		GlobosPG* unGlobo = new GlobosPG(vTexturas[0], x, y);
+		ObjetoJuego* unGlobo = new ObjetoJuego(this, x, y, TGlobos);
 		vObjetos.push_back(unGlobo);
 	}
 	
-	
-	 
+	//Creamos el premio y lo metemos en la última posición del array
+	x = rand() % 610;
+	y = rand() % 420;
+	ObjetoJuego* premio = new ObjetoJuego(this, x, y, TPremio);
+	vObjetos.push_back(premio);
 
-	if (i == vGlobos.size())
+
+	if (i == vObjetos.size())
 		return true;
 	else return false;
 
 }
 
-void JuegoPG::freeGlobos() {
-	for (int i = 0; i < vGlobos.size(); ++i)
-		delete vGlobos[i];
+void JuegoPG::freeObjetos() {
+	
+	for (int i = 0; i < vObjetos.size(); ++i)
+		delete vObjetos[i];
 	
 	for (int j = 0; j < vTexturas.size(); ++j)
 		delete vTexturas[j];
 }
 
-void JuegoPG::initMedia(){
-
-
-	//Para el fondo
-	fondo = new TexturasSDL;
-	string nombFondo = { "..\\bmps\\fondo.png" };
-	fondo->load(pRender, nombFondo);
-
-	//Para los globos
-	pTexture = new TexturasSDL;
-	string nombrGlobo = { "..\\bmps\\globo.png" };
-
-	pTexture->load(pRender, nombrGlobo);
-	vTexturas.push_back(pTexture);
-
-	string nombrMariposa = { "url_mariposa" };
-	string nombrPremio = { "url_premio" };
-
-}
-
-void JuegoPG::freeMedia(){
-	delete fondo;
-	delete pTexture;
-}
-
 
 void JuegoPG::render() const{
-
 
 	SDL_RenderClear(pRender);
 	
 	//Primero pintamos el fondo
-	fondo->draw(pRender,aux);
+	vTexturas[0]->draw(pRender,aux);
 
-	for (int i = 0; i < vGlobos.size(); ++i){
-		vGlobos[i]->draw(pRender);
+	for (int i = 1; i < vObjetos.size(); ++i){
+		vObjetos[i]->draw();
 	}
 
 	SDL_RenderPresent(pRender);
@@ -210,30 +215,17 @@ void JuegoPG::render() const{
 void JuegoPG::onClick(int pmx, int pmy) {
 	
 	int i = vObjetos.size() - 1;
-	bool pinchado = false;
+	//bool pinchado = false;
 	px = pmx;
 	py = pmy;
 
-	while (i >= 0 && !pinchado){
-		if (vObjetos[i]->onClick()){
-			globos--;
-			puntos += vGlobos[i]->valorGlobo;
-			pinchado = true;
-		}
+	while (i >= 0){
+		vObjetos[i]->onClick();
+			//pinchado = true;
 		--i;
 	}
-
-	/* !! IMPLEMENTACIÓN ANTES DE EVALUACIÓN !!
-	for (int i = 0; i < vGlobos.size(); ++i){
-		if (vGlobos[i]->onClick(pmx, pmy)){
-			globos--;
-			puntos+= vGlobos[i]->valorGlobo;
-			vGlobos[i]->visible = false;
-			vGlobos[i]->muerto = true;
-		}
-	}
-	*/
 }
+
 void JuegoPG::getMousePos(int & mpx, int & mpy) const{
 	
 	if (px == -1 || py == -1){
@@ -251,7 +243,6 @@ void JuegoPG::update() {
 	{
 		for (int i = 0; i < vObjetos.size(); ++i){
 			vObjetos[i]->update();
-				//globos--;
 		}
 	}
 }
@@ -274,13 +265,32 @@ void JuegoPG::handle_event(){
 }
 
 void JuegoPG::newBaja(ObjetoJuego* po){
-	delete po;
+	if (typeid(po) == typeid(GlobosPG)){
+		--globos;
+		if (globos == 0){
+			gameOver = true;
+		}
+	}
+	else if (typeid(po) == typeid(Mariposa)){
+		dynamic_cast<Mariposa*>(po)->visible = false;
+		dynamic_cast<Mariposa*>(po)->numClicks = 0;
+		newPremio(po);
+	}
+	else if (typeid(po) == typeid(Premio)){
+		dynamic_cast<Premio*>(po)->reinicia();
+	}
 }
 
 void JuegoPG::newPuntos(ObjetoJuego * po){
-
+	if (typeid(po) == typeid(GlobosPG)){
+		
+		puntos += dynamic_cast<GlobosPG*>(po)->valorGlobo;
+	}
+	else if (typeid(po) == typeid(Premio)){
+		puntos += dynamic_cast<Premio*>(po)->PP;
+	}
 }
 
 void JuegoPG::newPremio(ObjetoJuego* po){
-
+	dynamic_cast<Premio*>(po)->visible = true;
 }

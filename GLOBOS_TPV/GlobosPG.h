@@ -1,24 +1,24 @@
 #pragma once
 #include "SDL.h"
-#include "TexturasSDL.h"
+#include "ObjetoPG.h"
 
 class GlobosPG : public ObjetoPG
 {
 public:
 	
-	//GlobosPG(TexturasSDL* img, int px, int py);
-	GlobosPG(JuegoPG * hereJuego);
+	GlobosPG(JuegoPG * hereJuego, int x, int y, Texturas_t textura);
 	~GlobosPG();
 
-	TexturasSDL * pTextura = new TexturasSDL;
-	SDL_Rect rect;
+	//TexturasSDL * pTextura = new TexturasSDL;
+	//SDL_Rect rect;
 	//Textura_t pTextura = ObjetoPG::draw();
 
-	bool visible, muerto;
+	bool muerto;
 	int valorGlobo;
-	void draw() const;
-	bool onClick();
-	void update();
+
+	virtual void draw() const;
+	virtual bool onClick();
+	virtual void update();
 
 private:
 	 

@@ -1,26 +1,27 @@
 #pragma once
+#include "SDL.h"
 #include "JuegoPG.h"
 #include "ObjetoJuego.h"
 
 class ObjetoPG : public ObjetoJuego
 {
+
 public:
-	ObjetoPG();
+	
+	ObjetoPG(JuegoPG * juego, int x, int y, Texturas_t t_textura);
 	virtual ~ObjetoPG();
 
-	JuegoPG * juego;
-	JuegoPG::Texturas_t pTextura;
+	JuegoPG * obJuego;
+	Texturas_t tipoTextura;
+
+	SDL_Rect rect;
+	int posX, posY;
+	bool visible;
+	virtual void draw();
+	virtual void update() = 0;
+	virtual bool onClick() = 0;
 
 	bool dentro(int x, int y)const;
-
-	virtual void draw();
-
-	virtual void update();
-
-	virtual bool onClick();
-
-
-private:
 
 };
 

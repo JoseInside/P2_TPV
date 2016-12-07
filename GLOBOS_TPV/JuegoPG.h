@@ -4,6 +4,10 @@
 #include <vector>
 #include "ObjetoJuego.h"
 
+
+enum Texturas_t { TFondo, TMariposa, TGlobos, TPremio };
+
+
 class JuegoPG : public ObjetoJuego
 {
 public:
@@ -12,8 +16,8 @@ public:
 	~JuegoPG();
 	void run();
 	bool error;
-	enum Texturas_t {TFondo, TGlobos, TPremios, TMariposas};
-	vector <string*> archText;
+	
+	vector <string> archText;
 
 	TexturasSDL* getTextura(Texturas_t et) const { return vTexturas[et]; }
 	SDL_Renderer* getRender() const { return pRender; };
@@ -36,7 +40,6 @@ private:
 	bool exit, gameOver, pausa;
 	int px = -1, py = -1;
 	vector <ObjetoJuego*> vObjetos;
-	//vector <GlobosPG*>  vGlobos;
 	vector <TexturasSDL*>  vTexturas;
 
 	const int SCREEN_WIDTH = 640;   //Ancho de ventana
@@ -48,8 +51,8 @@ private:
 
 	bool initSDL();
 	void closeSDL();
-	bool initGlobos();
-	void freeGlobos();
+	bool initObjetos();
+	void freeObjetos();
 	void render() const;
 	void onClick(int pmx, int pmy);
 	void update();

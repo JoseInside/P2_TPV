@@ -2,8 +2,9 @@
 #include "TexturasSDL.h"
 #include "JuegoPG.h"
 
-GlobosPG::GlobosPG(JuegoPG * hereJuego)
+GlobosPG::GlobosPG(JuegoPG * hereJuego, int x, int y, Texturas_t textura) : ObjetoPG(hereJuego, x, y,textura)
 {	
+	muerto = false;
 }
 
 
@@ -11,17 +12,20 @@ GlobosPG::~GlobosPG()
 {
 }
 
-
+/*
 void GlobosPG::draw() const{
 	if (visible){
-		pTextura->draw(pRender, rect);
+		pTextura->draw(obJuego->getRender(), rect);
 	}
 }
-
+*/
 bool GlobosPG::onClick(){
 
-	if (visible && ObjetoPG::dentro(rect.x, rect.y)){
+	if (visible && dentro(rect.x, rect.y)){
 		//Explotamos el globo
+		obJuego->newPuntos(this);
+		obJuego->newBaja(this);
+		muerto = true;
 		return true;
 	}
 	else return false;
@@ -44,9 +48,8 @@ void GlobosPG::update(){
 		}
 
 		if (rect.h <= 0 || rect.w <= 0) {
-			return false;
+			visible = false;
+			muerto = true;
 		}
-		else return true;
 	}
-	else return true;
 }
