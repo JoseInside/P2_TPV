@@ -1,5 +1,7 @@
-#pragma once
-#include "SDL.h"
+#ifndef _H_GlobosPG_H_
+#define _H_GlobosPG_H_
+
+//#include "SDL.h"
 #include "ObjetoPG.h"
 
 class GlobosPG : public ObjetoPG
@@ -7,16 +9,12 @@ class GlobosPG : public ObjetoPG
 public:
 	
 	GlobosPG(JuegoPG * hereJuego, int x, int y, Texturas_t textura);
-	~GlobosPG();
-
-	//TexturasSDL * pTextura = new TexturasSDL;
-	//SDL_Rect rect;
-	//Textura_t pTextura = ObjetoPG::draw();
+	virtual ~GlobosPG();
 
 	bool muerto;
 	int valorGlobo;
 
-	virtual void draw() const;
+	//virtual void draw() const;
 	virtual bool onClick();
 	virtual void update();
 
@@ -28,3 +26,4 @@ private:
 	static const int PDES = 30; // Probabilidad Desinflados
 };
 
+#endif

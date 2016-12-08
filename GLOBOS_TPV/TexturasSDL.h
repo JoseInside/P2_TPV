@@ -1,4 +1,6 @@
-#pragma once
+#ifndef _H_TexturasSDL_H_
+#define _H_TexturasSDL_H_
+
 #include "SDL.h"
 #include <string>
 
@@ -21,3 +23,4 @@ private:
 	SDL_Texture* textura = nullptr;		
 };
 
+#endif

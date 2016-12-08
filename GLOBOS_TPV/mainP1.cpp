@@ -1,6 +1,6 @@
 /***************************************************************
 ****************************************************************
-				PRÁCTICA 1 - EL PINCHA GLOBOS
+				PRÁCTICA 2 - EL PINCHA GLOBOS
 Integrantes: 
 	José María Monreal González
 	Nahikari Madrid Ferrer
@@ -20,23 +20,13 @@ Mejoras:
 
 using namespace std;
 
-
-
 int main(int argc, char* args[]){
 
 	_CrtSetDbgFlag(_CRTDBG_ALLOC_MEM_DF | _CRTDBG_LEAK_CHECK_DF); // Check Memory Leaks
 
 	JuegoPG juego;
-	/*
-	if (juego.error) {
-		cout << " Fatal Error\n Press Enter";
-		cin.ignore();   
-		//system("pause");
-	}
-	else {*/
-		
-		juego.run();
-		
-		//}
+	
+	juego.run();
+	
 	return 0;
 }

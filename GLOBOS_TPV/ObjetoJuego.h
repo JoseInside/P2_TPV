@@ -1,6 +1,6 @@
-#pragma once
-#include "JuegoPG.h"
-#include "ObjetoPG.h"
+#ifndef _H_ObjetoJuego_H_
+#define _H_ObjetoJuego_H_
+
 class ObjetoJuego
 {
 public:
@@ -12,3 +12,4 @@ public:
 	virtual bool onClick() = 0;
 };
 
+#endif

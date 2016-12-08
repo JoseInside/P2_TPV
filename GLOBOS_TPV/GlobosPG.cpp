@@ -1,8 +1,8 @@
 #include "GlobosPG.h"
-#include "TexturasSDL.h"
-#include "JuegoPG.h"
+//#include "TexturasSDL.h"
 
-GlobosPG::GlobosPG(JuegoPG * hereJuego, int x, int y, Texturas_t textura) : ObjetoPG(hereJuego, x, y,textura)
+
+GlobosPG::GlobosPG(JuegoPG * hereJuego, int x, int y, Texturas_t textura) : ObjetoPG(hereJuego, x, y, textura)
 {	
 	muerto = false;
 }

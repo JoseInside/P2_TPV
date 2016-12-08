@@ -119,46 +119,40 @@ void JuegoPG::closeSDL () {
 	SDL_Quit();
 }
 
-bool JuegoPG::initObjetos(){
+bool JuegoPG::initObjetos() {
 
 	srand(time(NULL));
 
 	int x, y;
 	int i;
-	
+
 	archText[0] = { "..\\bmps\\fondo.png" };
 	archText[1] = { "..\\bmps\\globo.png" };
 	archText[2] = { "..\\bmps\\mariposa.png" };
 	archText[3] = { "..\\bmps\\premio.png" };
-	
-	/*
-	//Para el fondo
-	fondo = new TexturasSDL;
-	fondo->load(pRender, archText[0]);
-	*/
+
 
 	//Cargamos las texturas (fondo, globos, mariposas y premio)
-	for (int j = 0; j < archText.size(); ++j){
+	for (int j = 0; j < archText.size(); ++j) {
 
 		pTexture = new TexturasSDL;
 		pTexture->load(pRender, archText[j]);
 		vTexturas.push_back(pTexture);
 	}
-	
 
-	//Creamos la mariposa y la metemos en la primera posición del array
-	x = rand() % 610;
-	y = rand() % 420;
-	ObjetoJuego* mariposa = new Mariposa(this, x, y, TMariposa);
-	vObjetos.push_back(mariposa);
-
-	for (i = 1; i < globosTotales; ++i){	
+	for (i = 0; i < globosTotales; ++i){	
 		x = rand() % 610;
 		y = rand() % 420;
 		ObjetoJuego* unGlobo = new GlobosPG(this, x, y, TGlobos);
 		vObjetos.push_back(unGlobo);
 	}
-	
+
+	for (int cont = 0; cont < mariTotales; cont++) {
+		x = rand() % 610;
+		y = rand() % 420;
+		ObjetoJuego* mariposa = new Mariposa(this, x, y, TMariposa);
+		vObjetos.push_back(mariposa);
+	}
 	//Creamos el premio y lo metemos en la última posición del array
 	x = rand() % 610;
 	y = rand() % 420;
