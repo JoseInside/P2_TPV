@@ -12,4 +12,4 @@ c:\users\jose\desktop\proyecto2\p2_tpv\globos_tpv\juegopg.cpp(186): warning C401
 c:\users\jose\desktop\proyecto2\p2_tpv\globos_tpv\juegopg.cpp(222): warning C4018: '<': signed/unsigned mismatch
   GlobosPG.cpp
   Generating Code...
-LINK : fatal error LNK1104: cannot open file 'SDL2.lib'
+  GLOBOS_TPV.vcxproj -> C:\Users\Jose\Desktop\proyecto2\P2_TPV\bin\GLOBOS_TPVDebug.exe

@@ -10,7 +10,7 @@ public:
 	~Mariposa();
 
 	int numClicks = 0;
-	virtual void draw() const;
+	//virtual void draw() const;
 	virtual bool onClick();
 	virtual void update();
 };

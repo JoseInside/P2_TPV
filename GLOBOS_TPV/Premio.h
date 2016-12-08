@@ -10,7 +10,7 @@ public:
 	int numIntentos = 3;
 	int PP; //Puntos de Premio
 
-	virtual void draw() const;
+	//virtual void draw() const;
 	virtual bool onClick();
 	virtual void update();
 	void reinicia();
