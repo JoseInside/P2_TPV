@@ -1,5 +1,4 @@
 #pragma once
-#include "GlobosPG.h"
 #include "TexturasSDL.h"
 #include <vector>
 #include "ObjetoJuego.h"

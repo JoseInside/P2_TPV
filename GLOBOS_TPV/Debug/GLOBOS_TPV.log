@@ -1,44 +1,15 @@
-﻿  mainP1.cpp
-c:\users\jose\desktop\proyecto2\p2_tpv\globos_tpv\objetopg.h(13): error C2061: syntax error: identifier 'JuegoPG'
-c:\users\jose\desktop\proyecto2\p2_tpv\globos_tpv\objetopg.h(23): error C2143: syntax error: missing ';' before '*'
-c:\users\jose\desktop\proyecto2\p2_tpv\globos_tpv\objetopg.h(23): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
-c:\users\jose\desktop\proyecto2\p2_tpv\globos_tpv\objetopg.h(23): error C2238: unexpected token(s) preceding ';'
-c:\users\jose\desktop\proyecto2\p2_tpv\globos_tpv\objetopg.h(24): error C3646: 'tipoTextura': unknown override specifier
-c:\users\jose\desktop\proyecto2\p2_tpv\globos_tpv\objetopg.h(24): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
-c:\users\jose\desktop\proyecto2\p2_tpv\globos_tpv\globospg.h(11): error C2061: syntax error: identifier 'JuegoPG'
-  TexturasSDL.cpp
-c:\users\jose\desktop\proyecto2\p2_tpv\globos_tpv\objetopg.h(13): error C2061: syntax error: identifier 'JuegoPG'
-c:\users\jose\desktop\proyecto2\p2_tpv\globos_tpv\objetopg.h(23): error C2143: syntax error: missing ';' before '*'
-c:\users\jose\desktop\proyecto2\p2_tpv\globos_tpv\objetopg.h(23): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
-c:\users\jose\desktop\proyecto2\p2_tpv\globos_tpv\objetopg.h(23): error C2238: unexpected token(s) preceding ';'
-c:\users\jose\desktop\proyecto2\p2_tpv\globos_tpv\objetopg.h(24): error C3646: 'tipoTextura': unknown override specifier
-c:\users\jose\desktop\proyecto2\p2_tpv\globos_tpv\objetopg.h(24): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
-c:\users\jose\desktop\proyecto2\p2_tpv\globos_tpv\globospg.h(11): error C2061: syntax error: identifier 'JuegoPG'
+﻿  TexturasSDL.cpp
   Premio.cpp
-c:\users\jose\desktop\proyecto2\p2_tpv\globos_tpv\globospg.h(8): error C2504: 'ObjetoPG': base class undefined
-c:\users\jose\desktop\proyecto2\p2_tpv\globos_tpv\globospg.h(11): error C2061: syntax error: identifier 'JuegoPG'
   ObjetoPG.cpp
-c:\users\jose\desktop\proyecto2\p2_tpv\globos_tpv\globospg.h(8): error C2504: 'ObjetoPG': base class undefined
-c:\users\jose\desktop\proyecto2\p2_tpv\globos_tpv\globospg.h(11): error C2061: syntax error: identifier 'JuegoPG'
   Mariposa.cpp
-c:\users\jose\desktop\proyecto2\p2_tpv\globos_tpv\globospg.h(8): error C2504: 'ObjetoPG': base class undefined
-c:\users\jose\desktop\proyecto2\p2_tpv\globos_tpv\globospg.h(11): error C2061: syntax error: identifier 'JuegoPG'
+  mainP1.cpp
   JuegoPG.cpp
-c:\users\jose\desktop\proyecto2\p2_tpv\globos_tpv\objetopg.h(13): error C2061: syntax error: identifier 'JuegoPG'
-c:\users\jose\desktop\proyecto2\p2_tpv\globos_tpv\objetopg.h(23): error C2143: syntax error: missing ';' before '*'
-c:\users\jose\desktop\proyecto2\p2_tpv\globos_tpv\objetopg.h(23): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
-c:\users\jose\desktop\proyecto2\p2_tpv\globos_tpv\objetopg.h(23): error C2238: unexpected token(s) preceding ';'
-c:\users\jose\desktop\proyecto2\p2_tpv\globos_tpv\objetopg.h(24): error C3646: 'tipoTextura': unknown override specifier
-c:\users\jose\desktop\proyecto2\p2_tpv\globos_tpv\objetopg.h(24): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
-c:\users\jose\desktop\proyecto2\p2_tpv\globos_tpv\globospg.h(11): error C2061: syntax error: identifier 'JuegoPG'
 c:\users\jose\desktop\proyecto2\p2_tpv\globos_tpv\juegopg.cpp(124): warning C4244: 'argument': conversion from 'time_t' to 'unsigned int', possible loss of data
 c:\users\jose\desktop\proyecto2\p2_tpv\globos_tpv\juegopg.cpp(136): warning C4018: '<': signed/unsigned mismatch
-c:\users\jose\desktop\proyecto2\p2_tpv\globos_tpv\juegopg.cpp(146): error C2661: 'GlobosPG::GlobosPG': no overloaded function takes 4 arguments
 c:\users\jose\desktop\proyecto2\p2_tpv\globos_tpv\juegopg.cpp(171): warning C4018: '<': signed/unsigned mismatch
 c:\users\jose\desktop\proyecto2\p2_tpv\globos_tpv\juegopg.cpp(174): warning C4018: '<': signed/unsigned mismatch
 c:\users\jose\desktop\proyecto2\p2_tpv\globos_tpv\juegopg.cpp(186): warning C4018: '<': signed/unsigned mismatch
 c:\users\jose\desktop\proyecto2\p2_tpv\globos_tpv\juegopg.cpp(222): warning C4018: '<': signed/unsigned mismatch
-  Generating Code...
-  Compiling...
   GlobosPG.cpp
   Generating Code...
+LINK : fatal error LNK1104: cannot open file 'SDL2.lib'

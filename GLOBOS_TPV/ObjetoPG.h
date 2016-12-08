@@ -1,7 +1,6 @@
 #ifndef _H_ObjetoPG_H_
 #define _H_ObjetoPG_H_
-
-#include "SDL.h"
+#include <SDL.h>
 #include "JuegoPG.h"
 #include "ObjetoJuego.h"
 

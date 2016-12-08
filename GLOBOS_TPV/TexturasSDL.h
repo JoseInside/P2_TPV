@@ -11,7 +11,7 @@ class TexturasSDL
 public:
 	string nombArch;
 
-	TexturasSDL();
+	TexturasSDL() {};
 	~TexturasSDL();
 
 	bool load(SDL_Renderer* pRender, string const& nombArch);
